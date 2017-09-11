@@ -16,7 +16,9 @@ serde_derive = "1.0.14"
 
 #db
 rusqlite = {version="0.12.0", features=["serde_json"]}
+diesel = { version = "0.16.0", features = ["sqlite"] }
+diesel_codegen = { version = "0.16.0", features = ["sqlite"] }
 
 #connect pool
 r2d2 = "0.7.4"
-r2d2_sqlite = "0.2.1"
+r2d2-diesel = "0.16.0"
