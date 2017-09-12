@@ -1,7 +1,14 @@
 use rocket::request::{Form};
+use rocket::Route;
 use rocket_contrib::Json;
-use beans::register::*;
+use beans::register::Register;
+use beans::login::Login;
+use beans::user::User;
 use net::Reply;
+
+pub fn get_routes() -> Vec<Route> {
+    routes![register, login]
+}
 
 #[post("/register", data="<data>")]
 fn register(data: Form<Register>) -> Json<Reply<bool>> {

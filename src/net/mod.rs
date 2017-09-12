@@ -1,5 +1,4 @@
 pub use db;
-use serde::Serialize;
 
 mod posts;
 mod gets;
@@ -24,6 +23,6 @@ impl<'a, T> Reply<'a, T> {
 
 pub fn start() {
     ::rocket::ignite()
-        .mount("/", routes![])
+        .mount("/", posts::get_routes())
         .launch();
 }
